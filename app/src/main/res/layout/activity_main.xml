@@ -13,10 +13,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
-        android:fontFamily="monospace"
+        android:fontFamily="serif-monospace"
         android:gravity="center"
         android:padding="24dp"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="35sp"
+        android:textColor="@android:color/white"
         tools:text="@string/question_australia" />
 
     <LinearLayout
@@ -28,19 +29,22 @@
             android:id="@+id/true_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/purple_200"
+            android:backgroundTint="@color/true_false_buttons"
             android:padding="10dp"
             android:text="@string/true_button"
-            android:textColor="#212121" />
+            android:textColor="@color/white"/>
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="match_parent"/>
 
         <Button
             android:id="@+id/false_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/true_false_buttons"
+            android:backgroundTint="@color/true_false_buttons"
             android:padding="10dp"
             android:text="@string/false_button"
-            android:textColor="#212121" />
+            android:textColor="@color/white" />
     </LinearLayout>
 
     <LinearLayout
@@ -65,14 +69,19 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="10"
-                android:background="@color/true_false_buttons"
-                android:padding="10dp"
+                android:backgroundTint="@color/next_prev_buttons"
+                android:padding="2dp"
                 android:radius="20dp"
                 android:text="@string/previous_button"
-                android:textColor="#4527A0"
+                android:textColor="@color/white"
                 app:icon="@drawable/arrow_left"
                 app:iconGravity="start" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"/>
 
         <LinearLayout
             android:layout_width="100dp"
@@ -87,10 +96,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="10"
-                android:background="@color/next_prev_buttons"
-                android:padding="10dp"
+                android:backgroundTint="@color/next_prev_buttons"
+                android:padding="2dp"
                 android:text="@string/next_button"
-                android:textColor="#4527A0"
+                android:textColor="@color/white"
                 app:icon="@drawable/arrow_right"
                 app:iconGravity="end" />
         </LinearLayout>

@@ -1,5 +1,6 @@
 package com.kcire.geoquiz
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +8,8 @@ import android.util.Log
 //import android.widget.Button
 import android.widget.Toast
 import androidx.activity.viewModels
+import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.snackbar.Snackbar.SnackbarLayout
 
 //Import view binding feature
 import com.kcire.geoquiz.databinding.ActivityMainBinding
@@ -53,11 +56,20 @@ class MainActivity : AppCompatActivity() {
             R.string.incorrect_toast
         }
 
-        Toast.makeText(
-            this,
+        Snackbar.make(
+            binding.root,
             messageResId,
-            Toast.LENGTH_LONG
-        ).show()
+            Snackbar.LENGTH_SHORT
+        ).also {
+            it.setTextColor(this.getColor(R.color.snackbar_bg))
+            it.setBackgroundTint(Color.DKGRAY)
+        }.show()
+
+//        Toast.makeText(
+//            this,
+//            messageResId,
+//            Toast.LENGTH_SHORT
+//        ).show()
     }
 
     private val updateQuestion: () -> Unit = {

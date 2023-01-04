@@ -7,8 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="bg_main">#BCFF5722</color>
+    <color name="bg_main">#C1251C02</color>
     <color name="fg_main">#01071B</color>
     <color name="true_false_buttons">#FF5722</color>
     <color name="next_prev_buttons">#FF9800</color>
+    <color name="snackbar_bg">#FF5722</color>
 </resources>
