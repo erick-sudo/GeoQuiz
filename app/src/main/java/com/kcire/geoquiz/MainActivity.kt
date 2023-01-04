@@ -17,17 +17,6 @@ class MainActivity : AppCompatActivity() {
 
     private val quizViewModel: QuizViewModel by viewModels()
 
-    private val questionBank = listOf(
-        Question(R.string.question_australia, true),
-        Question(R.string.question_oceans, true),
-        Question(R.string.question_mideast, false),
-        Question(R.string.question_africa, false),
-        Question(R.string.question_americas, true),
-        Question(R.string.question_asia, true)
-    )
-
-    private var currentIndex = 0
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -36,14 +25,12 @@ class MainActivity : AppCompatActivity() {
         Log.d("QuizViewModel","Got a QuizViewModel: $quizViewModel")
 
         binding.nextButton.setOnClickListener {
-            currentIndex = (currentIndex+1) % questionBank.size
+            quizViewModel.moveToNextQuestion()
             updateQuestion()
         }
 
         binding.previousButton.setOnClickListener {
-            if(currentIndex>0) {
-                currentIndex = (currentIndex-1) % questionBank.size
-            }
+            quizViewModel.moveToNextQuestion(1)
             updateQuestion()
         }
 
@@ -58,7 +45,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkAnswer(userAnswer: Boolean) {
-        val correctAnswer = questionBank[currentIndex].answer
+        val correctAnswer = quizViewModel.currentQuestionAnswer
 
         val messageResId = if (userAnswer == correctAnswer) {
             R.string.correct_toast
@@ -74,6 +61,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val updateQuestion: () -> Unit = {
-        binding.questionTextView.setText(questionBank[currentIndex].textResId)
+        binding.questionTextView.setText(quizViewModel.currentQuestionText)
     }
 }
