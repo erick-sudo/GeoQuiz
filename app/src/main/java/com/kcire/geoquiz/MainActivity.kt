@@ -1,5 +1,6 @@
 package com.kcire.geoquiz
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -35,6 +36,12 @@ class MainActivity : AppCompatActivity() {
         binding.previousButton.setOnClickListener {
             quizViewModel.moveToNextQuestion(1)
             updateQuestion()
+        }
+
+        binding.cheatButton.setOnClickListener {
+            //Start cheat activity
+            val intent = Intent(this, CheatActivity::class.java)
+            startActivity(intent)
         }
 
         binding.trueButton.setOnClickListener {

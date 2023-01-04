@@ -12,4 +12,5 @@
     <color name="true_false_buttons">#FF5722</color>
     <color name="next_prev_buttons">#FF9800</color>
     <color name="snackbar_bg">#FF5722</color>
+    <color name="cheat_button_color">#4E2113</color>
 </resources>
