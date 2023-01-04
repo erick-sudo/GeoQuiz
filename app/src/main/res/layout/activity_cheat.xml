@@ -13,6 +13,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="24dp"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:textColor="@color/white"
         android:text="@string/warning_text">
     </TextView>
 
@@ -21,6 +24,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="24dp"
+        android:textSize="40sp"
+        android:textColor="@color/revealed_answer"
+        android:fontFamily="cursive"
+        android:textAllCaps="true"
         tools:text="Answer">
     </TextView>
 
@@ -28,7 +35,9 @@
         android:id="@+id/show_answer_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/show_answer_button">
+        android:text="@string/show_answer_button"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/true_false_buttons">
     </Button>
 
 </LinearLayout>
